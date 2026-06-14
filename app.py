@@ -23,7 +23,6 @@ def predict(features: SpiralFeatures):
         # 1. Извлекаем данные из Pydantic в словарь
         data_dict = features.model_dump()
         #Создаем DataFrame строго из сохраненного списка признаков
-        # Это гарантирует правильный порядок колонок, даже если на вход прислали иначе
         input_data = pd.DataFrame([data_dict], columns=feature_names)
         #Принудительно приводим типы к float
         input_data = input_data.astype('float32')
